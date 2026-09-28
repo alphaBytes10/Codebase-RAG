@@ -46,12 +46,12 @@ graph TD
 ## 🛠️ Technology Stack
 
 - **Backend / API:** Python + FastAPI
-- **Metadata & Persistence:** PostgreSQL
-- **Vector Search:** pgvector (or Qdrant)
+- **Metadata & Persistence:** Supabase (Managed PostgreSQL) or Neon
+- **Vector Search:** Pinecone / Qdrant Cloud / Supabase pgvector
 - **Code Parsing:** Tree-sitter
-- **Caching & Async Jobs:** Redis + Celery/RQ
+- **Caching & Async Jobs:** Upstash (Serverless Redis) + Celery/RQ
 - **Frontend / UI:** React + Next.js
-- **Deployment:** Docker + Docker Compose
+- **Deployment:** Render / Railway (Backend) & Vercel (Frontend)
 
 ## 🛣️ Implementation Roadmap
 
@@ -64,7 +64,7 @@ This project is built progressively, starting from core capabilities and expandi
 - [ ] **Phase 5: Performance** - Incremental indexing (hashing) + Redis caching.
 - [ ] **Phase 6: Benchmarking** - Evaluation suite measuring retrieval accuracy, source hit rate, and latency.
 - [ ] **Phase 7: User Interface** - Production-style Next.js UI interacting with FastAPI endpoints.
-- [ ] **Phase 8: Ops** - Dockerization, CI/CD pipelines, observability, and security hardening.
+- [ ] **Phase 8: Cloud Deployment** - Deploying to managed platforms (Render/Railway & Vercel), CI/CD pipelines via GitHub Actions, observability, and security.
 
 ## 🔌 API Reference (Planned)
 
