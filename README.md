@@ -15,7 +15,7 @@ Unlike basic RAG pipelines that blindly split text every 500 characters, this sy
 ### System Architecture
 
 ```mermaid
-graph TD
+graph LR
     A[GitHub Repository URL] -->|Clone/Fetch| B[Repository Ingestion]
     B --> C[Code Parser & Indexer\nTree-sitter]
     
@@ -76,6 +76,30 @@ POST /api/v1/repositories/{id}/index # Trigger re-index / sync
 GET  /api/v1/repositories/{id}/status# Check indexing progress
 GET  /api/v1/repositories/{id}/files # List indexed files
 POST /api/v1/chat                    # Multi-turn chat with the codebase
+```
+
+## 💻 Local Setup & Installation
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/alphaBytes10/Codebase-RAG.git
+cd Codebase-RAG
+```
+
+**2. Backend Setup (FastAPI)**
+```bash
+cd backend
+python -m venv venv
+# Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate
+pip install -r requirements.txt
+fastapi dev main.py
+```
+
+**3. Frontend Setup (React + Vite)**
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ## 🤝 Contributing
